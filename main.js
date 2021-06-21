@@ -1,7 +1,8 @@
 // The keys and notes variables store the piano keys
 const keys = ['c-key', 'd-key', 'e-key', 'f-key', 'g-key', 'a-key', 'b-key', 'high-c-key', 'c-sharp-key', 'd-sharp-key', 'f-sharp-key', 'g-sharp-key', 'a-sharp-key'];
 const notes = [];
-keys.forEach(function (key) {
+keys.forEach(function (key) {    
+    document.getElementById('c-key')
     notes.push(document.getElementById(key));
 })
 
@@ -13,10 +14,18 @@ const keyReturn = function(event) {
     event.target.style.backgroundColor = '';
 }
 // Write a named function with event handler properties
+let eventAssign = function(note){
+  note.onmousedown = function(event){
+      keyPlay(event)
+  }
 
+  note.onmouseup = function(event){
+      keyReturn(event)
+  }
+}
 
 // Write a loop that runs the array elements through the function
-
+notes.forEach(eventAssign)
 
 // These variables store the buttons that progress the user through the lyrics
 let nextOne = document.getElementById('first-next-line');

@@ -9,11 +9,11 @@ keys.forEach(function (key) {
 const keyPlay = function (event) {
     event.target.style.backgroundColor = "purple"
 }
-
-// Write a named function with event handler properties
-function key() {
-
+const keyReturn = function(event) {
+    event.target.style.backgroundColor = '';
 }
+// Write a named function with event handler properties
+
 
 // Write a loop that runs the array elements through the function
 
